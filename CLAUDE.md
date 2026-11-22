@@ -14,6 +14,7 @@ Sicherheits- und Qualitätsstandard für Projekte, die mit Coding-Agenten entwic
 - `kreislauf/`: `events.py` (Protokoll), `checks.py` (Prüfungen ohne Seiteneffekte), `machine.py` (Zustandsautomat mit Übergangstabelle), `cycle.py` (Ablauf mit `sbx`). `tests/`: Tests dazu.
 - `werkzeuge/`: `sandbox-template-build.sh` mit `sandbox-home/` (Arbeits-Vorlage `baseline-claude:<tag>`), `scan-template-build.sh` (Scan-Vorlage `baseline-scan:<tag>`), `gitleaks-probe/` (Probe der Gitleaks-Läufe des Gates in einer Scan-Sandbox; nach jedem Neubau der Scan-Vorlage wiederholen).
 - `beispiele/`: Ereignisprotokolle und Gate-Berichte aus zwei echten Läufen.
+- `SECURITY.md`: Meldeweg für Sicherheitslücken (vertraulich über GitHub).
 
 ## Befehle
 

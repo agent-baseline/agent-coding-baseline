@@ -77,6 +77,7 @@ Was davon an einem echten Lauf erprobt ist und was nur per Test belegt, steht im
 - **Keine Secrets im Projektordner,** auch nicht in nicht eingecheckten Dateien: Eine Sandbox kann den ganzen Ordner lesen.
 - **Kein GitHub-Token im Schlüsselspeicher von `sbx`:** Was dort liegt, setzt der Proxy laut Hilfe von `sbx` an die Anfragen aus jeder Sandbox. `sbx secret import` übernimmt Geheimnisse aus der Umgebung des Rechners, also nicht ungeprüft ausführen. Gepusht wird nur vom eigenen Rechner aus, nie aus einer Sandbox.
 - **Checks nicht umgehen:** kein `--no-verify`, Cooldown und Registry-Einstellungen bleiben, wie sie sind.
+- **Sicherheitslücken:** nicht als öffentliches Issue, sondern vertraulich melden; der Weg steht in `SECURITY.md`.
 - **Sprache:** Dokumente und Commit-Nachrichten auf Deutsch; Feldnamen und Ereignisarten im Protokoll auf Englisch.
 
 ## Stand und Herkunft
