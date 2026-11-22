@@ -1,0 +1,17 @@
+{
+  "id": "K2",
+  "title": "Benutzerliste nur für admin",
+  "route": "kurz",
+  "branch": "karte/k2-benutzerliste",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "allowed_paths": ["src/notiz_api/**", "tests/**"],
+  "test_paths": ["tests/**"],
+  "acceptance": [
+    "GET /users liefert einem admin die Liste der konfigurierten Benutzer mit name und role, sortiert nach name.",
+    "GET /users antwortet einem user mit 403 und ohne gültiges Token mit 401.",
+    "Die Antwort enthält keine Tokens."
+  ],
+  "task": "Ergänze die Notiz-API um die Benutzerliste. Lege die Route in einem eigenen Modul src/notiz_api/users.py als APIRouter an und binde ihn in app.py ein. Nutze require_admin aus auth.py; wenn auth.py dafür eine kleine öffentliche Funktion braucht, die die konfigurierten Benutzer ohne Tokens liefert, ergänze sie dort. Die Tests kommen in tests/test_users.py und nutzen die Fixtures aus tests/conftest.py.",
+  "dry_run_fault": "secret"
+}

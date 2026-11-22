@@ -1,0 +1,3 @@
+# Landet in der Sandbox als ~/.config/uv/uv.toml (sandbox-template-build.sh).
+# Projekte mit uv.lock brauchen denselben Wert zusätzlich im eigenen uv.toml.
+exclude-newer = "7 days"

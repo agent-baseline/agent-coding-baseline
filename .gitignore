@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Secrets gehören nicht in den Projektordner; falls doch, nie ins Repo
+.env
+.env.*
+!.env.example
+
+# Claude Code: persönliche Einstellungen
+.claude/settings.local.json
+
+# Umgebungen und Caches
+.venv/
+venv/
+node_modules/
+__pycache__/
+.pytest_cache/
+.coverage

@@ -1,0 +1,18 @@
+{
+  "id": "K1",
+  "title": "Notizen anlegen und lesen, mit Besitzerprüfung",
+  "route": "kurz",
+  "branch": "karte/k1-notizen",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "allowed_paths": ["src/notiz_api/**", "tests/**"],
+  "test_paths": ["tests/**"],
+  "acceptance": [
+    "POST /notes legt eine Notiz mit dem angemeldeten Benutzer als Besitzer an und antwortet mit 201 und der Notiz (id, owner, text).",
+    "GET /notes liefert einem user nur die eigenen Notizen, einem admin alle.",
+    "GET /notes/{id} liefert die Notiz dem Besitzer und einem admin; für einen anderen user und für eine unbekannte id kommt 404.",
+    "Alle drei Routen antworten ohne gültiges Token mit 401.",
+    "Ein leerer Text oder ein Text über 2000 Zeichen wird mit 422 abgelehnt."
+  ],
+  "task": "Ergänze die Notiz-API um Notizen. Lege die Routen in einem eigenen Modul src/notiz_api/notes.py als APIRouter an und binde ihn in app.py ein. Die Notizen liegen nur im Speicher; die Tests brauchen einen sauberen Speicher je Test. Die Tests kommen in tests/test_notes.py und nutzen die Fixtures aus tests/conftest.py (client, as_admin, as_ben, as_cem)."
+}

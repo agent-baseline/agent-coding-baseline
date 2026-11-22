@@ -1,0 +1,23 @@
+[project]
+name = "agent-coding-baseline"
+version = "0.1.0"
+description = "Sicherheits-Baseline für die Entwicklung mit Coding-Agenten: Konzept, Kreislauf-Skript, Sandbox-Vorlagen"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+# Das Kreislauf-Skript kommt mit der Standardbibliothek aus.
+dependencies = []
+
+[dependency-groups]
+# Nur für die Tests des Skripts.
+dev = [
+    "pytest>=8",
+]
+
+[tool.uv]
+# Kein installierbares Paket: `python3 -m kreislauf` läuft aus dem Projektordner.
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

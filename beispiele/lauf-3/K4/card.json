@@ -1,0 +1,18 @@
+{
+  "id": "K4",
+  "title": "Text der eigenen Notiz ändern",
+  "route": "kurz",
+  "branch": "karte/k4-notiz-aendern",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "allowed_paths": ["src/notiz_api/**", "tests/**"],
+  "test_paths": ["tests/**"],
+  "acceptance": [
+    "PUT /notes/{id} mit einem neuen Text ändert die Notiz für ihren Besitzer und antwortet mit 200 und der Notiz (id, owner, text); id und owner bleiben gleich.",
+    "Ein admin ändert fremde Notizen nicht: PUT /notes/{id} auf die Notiz eines anderen antwortet einem admin mit 403; die eigene Notiz ändert auch ein admin.",
+    "Für einen anderen user und für eine unbekannte id antwortet PUT /notes/{id} mit 404; der Text bleibt unverändert.",
+    "Ein leerer Text oder ein Text über 2000 Zeichen wird mit 422 abgelehnt; ohne gültiges Token kommt 401."
+  ],
+  "task": "Ergänze die Notiz-API um das Ändern einer Notiz. Lege die Route PUT /notes/{id} im vorhandenen Modul src/notiz_api/notes.py an; sie hängt an current_user und nimmt denselben Body wie das Anlegen (NoteIn). Nur der Besitzer ändert seine Notiz. Eine fremde Notiz verhält sich für einen user wie eine nicht vorhandene (404); ein admin sieht sie, darf sie aber nicht ändern (403). Die Tests kommen in eine neue Datei tests/test_notes_update.py und nutzen die Fixtures aus tests/conftest.py (client, as_admin, as_ben, as_cem); sie brauchen einen sauberen Speicher je Test.",
+  "dry_run_fault": "secret"
+}

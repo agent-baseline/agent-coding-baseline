@@ -1,0 +1,4 @@
+# Cooldown: keine Version, die jünger als sieben Tage ist. Der Wert steht auch im
+# Lockfile; er muss auf jedem Rechner und in jeder Sandbox derselbe sein.
+# Ausnahmen setzt der Mensch, nicht der Agent.
+exclude-newer = "7 days"

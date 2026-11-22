@@ -1,0 +1,4 @@
+# Landet in der Sandbox als ~/.npmrc (sandbox-template-build.sh).
+# min-release-age wirkt erst ab npm 11.10; das Skript hebt npm deshalb an.
+min-release-age=7
+ignore-scripts=true
